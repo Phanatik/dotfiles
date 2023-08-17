@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=RPCS3
+Exec=env AMD_VULKAN_ICD=RADV OBS_VK_CAPTURE=1 /media/Emulation/rpcs3.AppImage
+Type=Application

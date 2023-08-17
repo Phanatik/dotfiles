@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=ranger
+Exec=alacritty -e ranger
+Type=Application

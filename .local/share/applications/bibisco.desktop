@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=bibisco
+Exec=bibisco
+Path=$HOME/bibisco/
+Type=Application

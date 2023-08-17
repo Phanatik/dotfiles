@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=rusty
+Path=/media/Emulation/rusty/
+Exec=rusty-psn
+Type=Application

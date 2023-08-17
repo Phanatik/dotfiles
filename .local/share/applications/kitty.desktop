@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=ranger (kitty)
+Exec=kitty -e ranger
+Type=Application
