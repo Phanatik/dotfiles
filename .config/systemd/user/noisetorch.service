@@ -1,0 +1,20 @@
+[Unit]
+Description=Noisetorch Noise Cancelling
+Requires=sys-devices-pci0000:00-0000:00:01.2-0000:01:00.0-0000:02:08.0-0000:04:00.1-usb1-1\x2d1-1\x2d1:1.0-sound-card0-controlC0.device
+After=sys-devices-pci0000:00-0000:00:01.2-0000:01:00.0-0000:02:08.0-0000:04:00.1-usb1-1\x2d1-1\x2d1:1.0-sound-card0-controlC0.device
+# Depending on if you're using pulseaudio or pipewire, uncomment the correct line
+# After=pulseaudio.service
+After=pipewire.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+#ExecStart=%h/.local/bin/noisetorch -i -s alsa_input.usb-BEHRINGER_UMC202HD_192k-00.Direct__hw_U192k__source -t 95
+ExecStart=/usr/bin/noisetorch -i -s alsa_input.usb-BEHRINGER_UMC202HD_192k-00.Direct__hw_U192k__source -t 95
+#ExecStop=%h/.local/bin/noisetorch -u
+ExecStop=/usr/bin/noisetorch -u
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

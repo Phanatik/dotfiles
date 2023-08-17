@@ -15,7 +15,7 @@ set $up k
 set $right l
  
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -289,4 +289,34 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 include /etc/sway/config.d/*
 
+workspace 1 output DP-1
+workspace 2 output DP-2
+workspace 3 output DP-1
+workspace 4 output DP-2
+workspace 5 output DP-1
+workspace 6 output DP-2
+
+assign [class="steam"] workspace 1
+assign [instance="steamwenhelper"] workspace 1
+
+assign [class="Brave-browser"] workspace 2
+assign [class="discord"] workspace 2
+assign [app_id="soundux"] workspace 2
+
+assign [class="steam_app_*"] workspace 3
+assign [class="UnrealEditor"] workspace 3
+assign [class="Minecraft*"] workspace 3
+assign [class="alephone"] workspace 3
+assign [class="OxygenNotIncluded"] workspace 3
+
+assign [app_id="com.obsproject.Studio"] workspace 4
+assign [app_id="corectrl"] workspace 4
+assign [app_id="jack_mixer"] workspace 4
+assign [app_id="org.rncbc.qpwgraph"] workspace 4
+
+exec steam
+exec brave
+exec discord
+exec jack_mixer --config /home/massum/.local/share/jack_mixer/HorusHeresy.xml
+exec qpwgraph
 
